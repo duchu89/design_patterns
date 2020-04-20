@@ -1,4 +1,4 @@
-use crate::strategy::Strategy;
+use crate::strategy::strategy::Strategy;
 
 pub struct Context {
     pub strategy: Box<dyn Strategy>,
