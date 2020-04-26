@@ -9,17 +9,22 @@ use news_channel::NewsChannel;
 pub fn test() {
     let mut news_agency = NewsAgency::default();
 
-    let channel = NewsChannel{name: String::from("ABC")};
+    let abc_channel = NewsChannel{name: String::from("ABC")};
 
-    news_agency.add_observer(&channel);
-
+    println!("adding observer: {}", &abc_channel.name);
+    news_agency.add_observer(&abc_channel);
+    println!("publishing new news");
     news_agency.add_news("first breaking news".to_string());
 
-    let channel2 = NewsChannel{name: String::from("FoxNews")};
-    news_agency.add_observer(&channel2);
+    let fox_news_channel = NewsChannel{name: String::from("FoxNews")};
 
+    println!("adding observer: {}", &fox_news_channel.name);
+    news_agency.add_observer(&fox_news_channel);
+    println!("publishing new news");
     news_agency.add_news("second breaking news".to_string());
 
-    news_agency.delete_observer(&channel);
+    println!("removing observer: {}", &abc_channel.name);
+    news_agency.delete_observer(&abc_channel);
+    println!("publishing new news");
     news_agency.add_news("third breaking news".to_string());
 }
