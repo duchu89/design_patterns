@@ -9,5 +9,6 @@ Implementation of some design patterns in RUST.
 - [Observer](src/observer/)  
 - [Decorator](src/decorator/)  
 - [Factory Method](src/factory_method/)  
+- [Abstract Factory](src/abstract_factory/)  
 
 Based on Christopher Okhravi's [video series](https://www.youtube.com/watch?v=v9ejT8FO-7I&list=PLrhzvIcii6GNjpARdnO4ueTUAVR9eMBpc)

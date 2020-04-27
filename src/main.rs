@@ -10,6 +10,9 @@ mod decorator;
 #[path = "factory_method/test_factory_method.rs"]
 mod factory_method;
 
+#[path = "abstract_factory/test_abstract_factory.rs"]
+mod abstract_factory;
+
 fn main() {
     println!("#### STRATEGY ####");
     strategy::test();
@@ -26,4 +29,8 @@ fn main() {
     println!("#### FACTORY METHOD ####");
     factory_method::test();
     println!("#### END FACTORY METHOD ####");
+
+    println!("#### ABSTRACT FACTORY METHOD ####");
+    abstract_factory::test();
+    println!("#### END ABSTRACT FACTORY METHOD ####");
 }
