@@ -7,6 +7,9 @@ mod observer;
 #[path = "decorator/test_decorator.rs"]
 mod decorator;
 
+#[path = "factory_method/test_factory_method.rs"]
+mod factory_method;
+
 fn main() {
     println!("#### STRATEGY ####");
     strategy::test();
@@ -15,8 +18,12 @@ fn main() {
     println!("#### OBSERVER ####");
     observer::test();
     println!("#### END OBSERVER ####");
-    
+
     println!("#### DECORATOR ####");
     decorator::test();
     println!("#### END DECORATOR ####");
+
+    println!("#### FACTORY METHOD ####");
+    factory_method::test();
+    println!("#### END FACTORY METHOD ####");
 }
