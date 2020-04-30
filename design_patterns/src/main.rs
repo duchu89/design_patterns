@@ -1,17 +1,8 @@
-#[path = "strategy/test_strategy.rs"]
-mod strategy;
-
-#[path = "observer/test_observer.rs"]
-mod observer;
-
-#[path = "decorator/test_decorator.rs"]
-mod decorator;
-
-#[path = "factory_method/test_factory_method.rs"]
-mod factory_method;
-
-#[path = "abstract_factory/test_abstract_factory.rs"]
-mod abstract_factory;
+use strategy;
+use observer;
+use decorator;
+use factory_method;
+use abstract_factory;
 
 fn main() {
     println!("#### STRATEGY ####");

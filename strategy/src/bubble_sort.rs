@@ -1,4 +1,4 @@
-use crate::strategy::strategy::Strategy;
+use crate::strategy::Strategy;
 
 pub struct BubbleSort;
 

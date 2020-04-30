@@ -1,5 +1,5 @@
-use crate::factory_method::phone::{Phone, IPhone11Max, IPhoneSE, Pixel4XL,Pixel4a};
-use crate::factory_method::specification::Specification;
+use crate::phone::{Phone, IPhone11Max, IPhoneSE, Pixel4XL,Pixel4a};
+use crate::specification::Specification;
 
 pub trait Factory {
     fn new_phone(&self, spec: Specification) -> Box<dyn Phone>;

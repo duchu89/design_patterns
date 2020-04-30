@@ -1,7 +1,7 @@
 mod decorator;
 mod pizza;
 
-use decorator::{Cheese, Chicken};
+use crate::decorator::{Cheese, Chicken};
 use pizza::{Margherita, Pizza, Vegetariana};
 
 pub fn test() {

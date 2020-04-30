@@ -1,4 +1,4 @@
-use crate::observer::observer::Observer;
+use crate::observer::Observer;
 
 #[derive(PartialEq)]
 pub struct NewsChannel {

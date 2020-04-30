@@ -1,6 +1,6 @@
-use crate::abstract_factory::factory::GUIFactory;
-use crate::abstract_factory::buttons::Button;
-use crate::abstract_factory::progress_bar::ProgressBar;
+use crate::factory::GUIFactory;
+use crate::buttons::Button;
+use crate::progress_bar::ProgressBar;
 
 pub struct Application {
     button: Box<dyn Button>,

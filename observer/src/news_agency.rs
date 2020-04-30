@@ -1,4 +1,4 @@
-use crate::observer::observer::{Observable, Observer};
+use crate::observer::{Observable, Observer};
 
 pub struct NewsAgency<'a, T: Observer> {
     pub channels: Vec<Box<&'a T>>,

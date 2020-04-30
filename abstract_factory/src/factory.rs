@@ -1,5 +1,5 @@
-use crate::abstract_factory::buttons::{Button, MaterialButton, CupertinoButton};
-use crate::abstract_factory::progress_bar::{ProgressBar, MaterialProgressBar, CupertinoProgressBar};
+use crate::buttons::{Button, MaterialButton, CupertinoButton};
+use crate::progress_bar::{ProgressBar, MaterialProgressBar, CupertinoProgressBar};
 
 pub trait GUIFactory {
     fn create_button(&self) -> Box<dyn Button>;

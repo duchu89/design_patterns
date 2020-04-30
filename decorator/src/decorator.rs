@@ -1,4 +1,4 @@
-use crate::decorator::pizza::Pizza;
+use crate::Pizza;
 
 pub struct Cheese {
     pub pizza: Box<dyn Pizza>,

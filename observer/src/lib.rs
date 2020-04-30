@@ -2,7 +2,7 @@ mod news_agency;
 mod news_channel;
 mod observer;
 
-use observer::Observable;
+use crate::observer::Observable;
 use news_agency::NewsAgency;
 use news_channel::NewsChannel;
 
