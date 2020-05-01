@@ -1,11 +1,12 @@
 use crate::observer::{Observable, Observer};
+use std::rc::Weak;
 
-pub struct NewsAgency<'a, T: Observer> {
-    pub channels: Vec<Box<&'a T>>,
+pub struct NewsAgency<T: Observer> {
+    pub channels: Vec<Weak<T>>,
     pub news: String,
 }
 
-impl<'a, T> NewsAgency<'a, T>
+impl<T> NewsAgency<T>
 where
     T: Observer + PartialEq,
 {
@@ -14,7 +15,7 @@ where
         self.notify_observers();
     }
 
-    pub fn default() -> NewsAgency<'a, T> {
+    pub fn default() -> NewsAgency<T> {
         NewsAgency {
             channels: Vec::new(),
             news: String::from(""),
@@ -22,23 +23,28 @@ where
     }
 }
 
-impl<'a, T> Observable<'a, T> for NewsAgency<'a, T>
+impl<T> Observable<T> for NewsAgency<T>
 where
     T: Observer + PartialEq,
 {
-    fn add_observer(&mut self, observer: &'a T) {
-        self.channels.push(Box::new(observer));
+    fn add_observer(&mut self, observer: Weak<T>) {
+        self.channels.push(observer);
     }
 
-    fn delete_observer(&mut self, observer: &'a T) {
-        if let Some(idx) = self.channels.iter().position(|x| **x == observer) {
+    fn delete_observer(&mut self, observer: &T) {
+        if let Some(idx) = self.channels.iter().position(|x| match x.upgrade() {
+            None => false,
+            Some(obs) => *obs == *observer,
+        }) {
             self.channels.remove(idx);
         }
     }
 
     fn notify_observers(&mut self) {
         for channel in self.channels.iter() {
-            channel.update(&self.news);
+            if let Some(obs) = channel.upgrade() {
+                obs.update(&self.news);
+            }
         }
     }
 }
