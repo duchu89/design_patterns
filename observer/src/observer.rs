@@ -5,7 +5,7 @@ pub trait Observer {
 }
 
 pub trait Observable<T: Observer> {
-	fn add_observer(&mut self, observer: Weak<T>);
-	fn delete_observer(&mut self, observer: &T);
-	fn notify_observers(&mut self);
+	fn add_observer(&self, observer: Weak<T>);
+	fn delete_observer(&self, observer: &T);
+	fn notify_observers(&self);
 }

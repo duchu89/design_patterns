@@ -1,8 +1,9 @@
 use crate::observer::{Observable, Observer};
+use std::cell::RefCell;
 use std::rc::Weak;
 
 pub struct NewsAgency<T: Observer> {
-    pub channels: Vec<Weak<T>>,
+    pub channels: RefCell<Vec<Weak<T>>>,
     pub news: String,
 }
 
@@ -17,7 +18,7 @@ where
 
     pub fn default() -> NewsAgency<T> {
         NewsAgency {
-            channels: Vec::new(),
+            channels: RefCell::new(Vec::new()),
             news: String::from(""),
         }
     }
@@ -27,21 +28,22 @@ impl<T> Observable<T> for NewsAgency<T>
 where
     T: Observer + PartialEq,
 {
-    fn add_observer(&mut self, observer: Weak<T>) {
-        self.channels.push(observer);
+    fn add_observer(&self, observer: Weak<T>) {
+        self.channels.borrow_mut().push(observer);
     }
 
-    fn delete_observer(&mut self, observer: &T) {
-        if let Some(idx) = self.channels.iter().position(|x| match x.upgrade() {
+    fn delete_observer(&self, observer: &T) {
+        let mut borrowed_vec = self.channels.borrow_mut();
+        if let Some(idx) = borrowed_vec.iter().position(|x| match x.upgrade() {
             None => false,
             Some(obs) => *obs == *observer,
         }) {
-            self.channels.remove(idx);
+            borrowed_vec.remove(idx);
         }
     }
 
-    fn notify_observers(&mut self) {
-        for channel in self.channels.iter() {
+    fn notify_observers(&self) {
+        for channel in self.channels.borrow().iter() {
             if let Some(obs) = channel.upgrade() {
                 obs.update(&self.news);
             }
