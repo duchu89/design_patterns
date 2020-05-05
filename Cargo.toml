@@ -7,4 +7,5 @@ members = [
     "decorator",
     "factory_method",
     "abstract_factory",
+    "command",
 ]

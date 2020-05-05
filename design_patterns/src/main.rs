@@ -3,6 +3,7 @@ use observer;
 use decorator;
 use factory_method;
 use abstract_factory;
+use command;
 
 fn main() {
     println!("#### STRATEGY ####");
@@ -24,4 +25,8 @@ fn main() {
     println!("#### ABSTRACT FACTORY METHOD ####");
     abstract_factory::test();
     println!("#### END ABSTRACT FACTORY METHOD ####");
+
+    println!("#### COMMAND ####");
+    command::test();
+    println!("#### END COMMAND ####");
 }
