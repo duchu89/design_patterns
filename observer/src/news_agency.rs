@@ -33,12 +33,12 @@ where
     }
 
     fn delete_observer(&self, observer: &T) {
-        let mut borrowed_vec = self.channels.borrow_mut();
-        if let Some(idx) = borrowed_vec.iter().position(|x| match x.upgrade() {
+        let mut mut_channels = self.channels.borrow_mut();
+        if let Some(idx) = mut_channels.iter().position(|x| match x.upgrade() {
             None => false,
             Some(obs) => *obs == *observer,
         }) {
-            borrowed_vec.remove(idx);
+            mut_channels.remove(idx);
         }
     }
 
