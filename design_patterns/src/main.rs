@@ -5,6 +5,7 @@ use factory_method;
 use abstract_factory;
 use command;
 use adapter;
+use proxy;
 
 fn main() {
     println!("#### STRATEGY ####");
@@ -34,4 +35,8 @@ fn main() {
     println!("#### ADAPTER ####");
     adapter::test();
     println!("#### END ADAPTER ####");
+
+    println!("#### PROXY ####");
+    proxy::test();
+    println!("#### END PROXY ####");
 }
