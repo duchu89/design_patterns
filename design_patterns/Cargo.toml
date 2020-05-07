@@ -13,3 +13,4 @@ decorator = { path = "../decorator" }
 factory_method = { path = "../factory_method" }
 abstract_factory = { path = "../abstract_factory" }
 command = { path = "../command" }
+adapter = { path = "../adapter" }

@@ -8,4 +8,5 @@ members = [
     "factory_method",
     "abstract_factory",
     "command",
+    "adapter",
 ]

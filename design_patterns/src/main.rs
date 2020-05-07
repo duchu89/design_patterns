@@ -4,6 +4,7 @@ use decorator;
 use factory_method;
 use abstract_factory;
 use command;
+use adapter;
 
 fn main() {
     println!("#### STRATEGY ####");
@@ -29,4 +30,8 @@ fn main() {
     println!("#### COMMAND ####");
     command::test();
     println!("#### END COMMAND ####");
+
+    println!("#### ADAPTER ####");
+    adapter::test();
+    println!("#### END ADAPTER ####");
 }
