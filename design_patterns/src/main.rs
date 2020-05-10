@@ -6,6 +6,7 @@ use abstract_factory;
 use command;
 use adapter;
 use proxy;
+use bridge;
 
 fn main() {
     println!("#### STRATEGY ####");
@@ -39,4 +40,8 @@ fn main() {
     println!("#### PROXY ####");
     proxy::test();
     println!("#### END PROXY ####");
+
+    println!("#### BRIDGE ####");
+    bridge::test();
+    println!("#### END BRIDGE ####");
 }

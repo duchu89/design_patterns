@@ -33,7 +33,7 @@ impl ExpensiveObjectProxy {
 
 impl ExpensiveCalculation for ExpensiveObjectProxy {
     fn process(&mut self) {
-        match self.object.as_mut() {
+        match &mut self.object {
             Some(v) => v.process(),
             None => {
                 self.object = Some(ExpensiveObject::new());
