@@ -2,7 +2,7 @@ mod device;
 mod remote;
 
 use device::{Device, TV, Radio};
-use remote::{BasicRemote, ProRemote};
+use remote::{Remote, BasicRemote, ProRemote};
 
 pub fn test() {
     test_device(&mut TV::new());
@@ -20,6 +20,8 @@ pub fn test_device<'a>(test_device: &mut dyn Device) {
 
     let pro_remote = ProRemote::new(test_device);
 
+    pro_remote.power();
+    pro_remote.volume_up();
     pro_remote.mute();
     test_device.print_status();
 }
