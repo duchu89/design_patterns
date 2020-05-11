@@ -13,15 +13,8 @@ pub fn test() {
     let mut context = Context {
         strategy: Box::new(BubbleSort),
     };
-
     context.arrange(&numbers);
 
-
     context.strategy = Box::new(QuickSort);
-
-    context = Context {
-        strategy: Box::new(QuickSort),
-    };
-
     context.arrange(&numbers);
 }
