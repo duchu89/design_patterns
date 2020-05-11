@@ -1,8 +1,10 @@
 use crate::command::Command;
 use std::cell::RefCell;
 
+type MyCommand<'a> = Box<dyn Command + 'a>;
+
 pub struct Broker<'a> {
-    order_list: RefCell<Vec<Box<dyn Command + 'a>>>,
+    order_list: RefCell<Vec<MyCommand<'a>>>,
 }
 
 impl<'a> Broker<'a> {
@@ -12,7 +14,7 @@ impl<'a> Broker<'a> {
         }
     }
 
-    pub fn take_order(&self, order: Box<dyn Command + 'a>) {
+    pub fn take_order(&self, order: MyCommand<'a>) {
         self.order_list.borrow_mut().push(order);
     }
 
