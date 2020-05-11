@@ -9,7 +9,7 @@ pub fn test() {
     test_device(&mut Radio::new());
 }
 
-pub fn test_device<'a>(test_device: &mut dyn Device) {
+pub fn test_device<'a, T: Device>(test_device: &mut T) {
     let basic_remote = BasicRemote::new(test_device);
 
     basic_remote.power();

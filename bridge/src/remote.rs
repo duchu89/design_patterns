@@ -2,7 +2,7 @@ use crate::device::Device;
 use std::cell::RefCell;
 use std::rc::Rc;
 
-pub trait Remote<'a T: Device> {
+pub trait Remote<'a, T: Device + 'a> {
     fn get_device(&self) -> Rc<RefCell<&'a mut T>>;
 
     fn power(&self) {
@@ -32,30 +32,30 @@ pub trait Remote<'a T: Device> {
     }
 }
 
-pub struct BasicRemote<'a> {
-    device: Rc<RefCell<&'a mut dyn Device>>,
+pub struct BasicRemote<'a, T: Device> {
+    device: Rc<RefCell<&'a mut T>>,
 }
 
-impl<'a> BasicRemote<'a> {
-    pub fn new(device: &'a mut dyn Device) -> BasicRemote {
+impl<'a, T: Device> BasicRemote<'a, T> {
+    pub fn new(device: &'a mut T) -> BasicRemote<T> {
         BasicRemote {
             device: Rc::new(RefCell::new(device)),
         }
     }
 }
 
-impl<'a> Remote<'a> for BasicRemote<'a> {
-    fn get_device(&self) -> Rc<RefCell<&'a mut dyn Device>> {
+impl<'a, T: Device> Remote<'a, T> for BasicRemote<'a, T> {
+    fn get_device(&self) -> Rc<RefCell<&'a mut T>> {
         Rc::clone(&self.device)
     }
 }
 
-pub struct ProRemote<'a> {
-    device: Rc<RefCell<&'a mut dyn Device>>,
+pub struct ProRemote<'a, T: Device> {
+    device: Rc<RefCell<&'a mut T>>,
 }
 
-impl<'a> ProRemote<'a> {
-    pub fn new(device: &'a mut dyn Device) -> ProRemote {
+impl<'a, T: Device> ProRemote<'a, T> {
+    pub fn new(device: &'a mut T) -> ProRemote<T> {
         ProRemote {
             device: Rc::new(RefCell::new(device)),
         }
@@ -67,8 +67,8 @@ impl<'a> ProRemote<'a> {
     }
 }
 
-impl<'a> Remote<'a> for ProRemote<'a> {
-    fn get_device(&self) -> Rc<RefCell<&'a mut dyn Device>> {
+impl<'a, T: Device> Remote<'a, T> for ProRemote<'a, T> {
+    fn get_device(&self) -> Rc<RefCell<&'a mut T>> {
         Rc::clone(&self.device)
     }
 }
