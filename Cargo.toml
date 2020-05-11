@@ -11,4 +11,5 @@ members = [
     "adapter",
     "proxy",
     "bridge",
+    "template_method",
 ]

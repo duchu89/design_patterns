@@ -13,6 +13,7 @@ Implementation of some design patterns in RUST.
 - [Command](command/src)  
 - [Adapter](adapter/src)  
 - [Proxy](proxy/src)  
-- [BRIDGE](bridge/src)  
+- [Bridge](bridge/src)  
+- [Template Method](template_method/src)  
 
 Based on Christopher Okhravi's [video series](https://www.youtube.com/watch?v=v9ejT8FO-7I&list=PLrhzvIcii6GNjpARdnO4ueTUAVR9eMBpc)

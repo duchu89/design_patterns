@@ -7,6 +7,7 @@ use command;
 use adapter;
 use proxy;
 use bridge;
+use template_method;
 
 fn main() {
     println!("#### STRATEGY ####");
@@ -44,4 +45,8 @@ fn main() {
     println!("#### BRIDGE ####");
     bridge::test();
     println!("#### END BRIDGE ####");
+
+    println!("#### TEMPLATE METHOD ####");
+    template_method::test();
+    println!("#### END TEMPLATE METHOD ####");
 }
