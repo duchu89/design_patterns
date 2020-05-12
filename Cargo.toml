@@ -12,4 +12,5 @@ members = [
     "proxy",
     "bridge",
     "template_method",
+    "composit",
 ]

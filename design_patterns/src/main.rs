@@ -8,6 +8,7 @@ use adapter;
 use proxy;
 use bridge;
 use template_method;
+use composit;
 
 fn main() {
     println!("#### STRATEGY ####");
@@ -49,4 +50,8 @@ fn main() {
     println!("#### TEMPLATE METHOD ####");
     template_method::test();
     println!("#### END TEMPLATE METHOD ####");
+
+    println!("#### COMPOSIT ####");
+    composit::test();
+    println!("#### END COMPOSIT ####");
 }
