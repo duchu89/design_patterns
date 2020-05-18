@@ -7,7 +7,7 @@ Implementation of some design patterns in RUST.
 
 - [Strategy](strategy/README.md)
 - [Observer](observer/README.md)  
-- [Decorator](decorator/src)  
+- [Decorator](decorator/README.md)  
 - [Factory Method](factory_method/README.md)  
 - [Abstract Factory](abstract_factory/README.md)  
 - [Command](command/src)  
