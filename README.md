@@ -5,11 +5,11 @@ Implementation of some design patterns in RUST.
 
 ### Table of contents:
 
-- [Strategy](strategy/README.md)
-- [Observer](observer/README.md)  
-- [Decorator](decorator/README.md)  
-- [Factory Method](factory_method/README.md)  
-- [Abstract Factory](abstract_factory/README.md)  
+- [Strategy](strategy/src)
+- [Observer](observer/src)  
+- [Decorator](decorator/src)  
+- [Factory Method](factory_method/src)  
+- [Abstract Factory](abstract_factory/src)  
 - [Command](command/src)  
 - [Adapter](adapter/src)  
 - [Proxy](proxy/src)  
