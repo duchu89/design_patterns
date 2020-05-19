@@ -18,3 +18,4 @@ proxy = { path = "../proxy" }
 bridge = { path = "../bridge" }
 template_method = { path = "../template_method" }
 composit = { path = "../composit" }
+visitor = { path = "../visitor" }

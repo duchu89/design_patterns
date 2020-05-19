@@ -13,4 +13,5 @@ members = [
     "bridge",
     "template_method",
     "composit",
+    "visitor",
 ]

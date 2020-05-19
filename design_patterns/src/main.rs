@@ -9,6 +9,7 @@ use proxy;
 use bridge;
 use template_method;
 use composit;
+use visitor;
 
 fn main() {
     println!("#### STRATEGY ####");
@@ -54,4 +55,8 @@ fn main() {
     println!("#### COMPOSIT ####");
     composit::test();
     println!("#### END COMPOSIT ####");
+
+    println!("#### VISITOR ####");
+    visitor::test();
+    println!("#### END VISITOR ####");
 }
