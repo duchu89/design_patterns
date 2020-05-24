@@ -10,6 +10,7 @@ use bridge;
 use template_method;
 use composit;
 use visitor;
+use flyweight;
 
 fn main() {
     println!("#### STRATEGY ####");
@@ -59,4 +60,8 @@ fn main() {
     println!("#### VISITOR ####");
     visitor::test();
     println!("#### END VISITOR ####");
+
+    println!("#### FLYWEIGHT ####");
+    flyweight::test();
+    println!("#### END FLYWEIGHT ####");
 }

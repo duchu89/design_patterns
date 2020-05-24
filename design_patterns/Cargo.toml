@@ -19,3 +19,4 @@ bridge = { path = "../bridge" }
 template_method = { path = "../template_method" }
 composit = { path = "../composit" }
 visitor = { path = "../visitor" }
+flyweight = { path = "../flyweight" }
