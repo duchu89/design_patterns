@@ -11,7 +11,7 @@ Implementation of some design patterns in RUST.
 - [Factory Method](factory_method/)  
 - [Abstract Factory](abstract_factory/)  
 - [Command](command/)  
-- [Adapter](adapter/src)  
+- [Adapter](adapter/)  
 - [Proxy](proxy/src)  
 - [Bridge](bridge/src)  
 - [Template Method](template_method/src)  
