@@ -10,7 +10,7 @@ Implementation of some design patterns in RUST.
 - [Decorator](decorator/)  
 - [Factory Method](factory_method/)  
 - [Abstract Factory](abstract_factory/)  
-- [Command](command/src)  
+- [Command](command/)  
 - [Adapter](adapter/src)  
 - [Proxy](proxy/src)  
 - [Bridge](bridge/src)  
