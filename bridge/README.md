@@ -10,8 +10,8 @@ This pattern lets you split a large class or a set of closely related classes in
 ![Bridge diagram](bridge.png)
 
 There are 2 parts in Bridge design pattern :
-\* Abstraction
-\* Implementation
+ * Abstraction
+ * Implementation
 
 The bridge pattern allows the Abstraction and the Implementation to be developed independently and the client code can access only the Abstraction part without being concerned about the Implementation part.
 The abstraction is an interface or abstract class and the implementor is also an interface or abstract class.
