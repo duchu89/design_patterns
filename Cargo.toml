@@ -15,4 +15,5 @@ members = [
     "composit",
     "visitor",
     "flyweight",
+    "chain_of_responsibility",
 ]

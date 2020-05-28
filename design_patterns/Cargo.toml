@@ -20,3 +20,4 @@ template_method = { path = "../template_method" }
 composit = { path = "../composit" }
 visitor = { path = "../visitor" }
 flyweight = { path = "../flyweight" }
+chain_of_responsibility = { path = "../chain_of_responsibility" }

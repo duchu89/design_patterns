@@ -18,5 +18,6 @@ Implementation of some design patterns in RUST.
 - [Composit](composit/)  
 - [Visitor](visitor/)  
 - [Flyweight](flyweight/)  
+- [Chain of Responsibility](chain_of_responsibility/)  
 
 Based on Christopher Okhravi's [video series](https://www.youtube.com/watch?v=v9ejT8FO-7I&list=PLrhzvIcii6GNjpARdnO4ueTUAVR9eMBpc)

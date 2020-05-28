@@ -11,6 +11,7 @@ use template_method;
 use composit;
 use visitor;
 use flyweight;
+use chain_of_responsibility;
 
 fn main() {
     println!("#### STRATEGY ####");
@@ -64,4 +65,8 @@ fn main() {
     println!("#### FLYWEIGHT ####");
     flyweight::test();
     println!("#### END FLYWEIGHT ####");
+
+    println!("#### CHAIN OF RESPONSIBILITY ####");
+    chain_of_responsibility::test();
+    println!("#### END CHAIN OF RESPONSIBILITY ####");
 }
