@@ -15,7 +15,7 @@ Implementation of some design patterns in RUST.
 - [Proxy](proxy/)  
 - [Bridge](bridge/)  
 - [Template Method](template_method/src)  
-- [Composit](composit/src)  
+- [Composit](composit/)  
 - [Visitor](visitor/)  
 - [Flyweight](flyweight/)  
 
